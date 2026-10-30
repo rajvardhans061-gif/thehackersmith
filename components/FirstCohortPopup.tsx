@@ -31,7 +31,7 @@ export default function FirstCohortPopup() {
       }
 
       setIsOpen(true);
-    }, 2000);
+    }, 8000);
 
     return () => window.clearTimeout(timer);
   }, []);
