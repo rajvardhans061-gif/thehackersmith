@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #02080f;
+  --bg-secondary: #06131d;
+  --bg-panel: #081d2a;
+  --brand-cyan: #00e5ff;
+  --brand-cyan-bright: #12efff;
+  --text-primary: #f4f7f9;
+  --text-secondary: #a7b5bd;
+  --text-muted: #6f818b;
+  --border-subtle: rgba(0, 229, 255, 0.15);
+  --border-strong: rgba(0, 229, 255, 0.4);
+  --color-success: #00e676;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(0, 229, 255, 0.25);
+  color: #f4f7f9;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #02080f;
+}
+::-webkit-scrollbar-thumb {
+  background: #0d2536;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #12344d;
+}
+
+@layer components {
+  .section {
+    @apply relative py-14 md:py-20;
+  }
+
+  .shell {
+    @apply mx-auto w-full max-w-shell px-5 sm:px-8;
+  }
+
+  .glass-card {
+    @apply rounded-2xl border bg-panel/80 backdrop-blur-md;
+    border-color: var(--border-subtle);
+  }
+
+  .section-label {
+    @apply font-mono text-xs uppercase tracking-[0.3em] text-brand;
+  }
+
+  .heading-xl {
+    @apply text-4xl font-bold leading-[1.08] tracking-tight text-ink sm:text-5xl lg:text-6xl;
+  }
+
+  .heading-lg {
+    @apply text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl;
+  }
+
+  .body-text {
+    @apply text-base leading-relaxed text-mist md:text-lg;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-6 py-3
+      text-sm font-semibold text-[#02141c] transition-all duration-200
+      hover:bg-brand-bright hover:shadow-glow focus:outline-none
+      focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2
+      focus-visible:ring-offset-base;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border px-6 py-3
+      text-sm font-semibold text-ink transition-all duration-200
+      hover:border-brand hover:text-brand hover:shadow-glow
+      focus:outline-none focus-visible:ring-2 focus-visible:ring-brand
+      focus-visible:ring-offset-2 focus-visible:ring-offset-base;
+    border-color: var(--border-subtle);
+  }
+
+  .nav-link {
+    @apply relative text-sm font-medium text-mist transition-colors duration-200
+      hover:text-ink focus:outline-none focus-visible:text-brand;
+  }
+
+  .nav-link-active {
+    @apply text-brand;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-glow;
+  }
+}
+
+@layer utilities {
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(0, 229, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 229, 255, 0.04) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+
+  .radial-glow {
+    background: radial-gradient(
+      ellipse 60% 50% at 50% 0%,
+      rgba(0, 229, 255, 0.08),
+      transparent 70%
+    );
+  }
+
+  .text-gradient-cyan {
+    background: linear-gradient(135deg, #f4f7f9 30%, #00e5ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}

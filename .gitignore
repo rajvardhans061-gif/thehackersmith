@@ -1,0 +1,21 @@
+node_modules
+.next
+out
+dist
+.env*.local
+.vercel
+*.tsbuildinfo
+next-env.d.ts
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies and build files
+node_modules/
+.next/
+out/
+dist/
+.vercel/
+*.tsbuildinfo
