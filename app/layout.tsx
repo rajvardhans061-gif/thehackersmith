@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
@@ -5,6 +6,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingPricing from "@/components/FloatingPricing";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -54,6 +56,8 @@ export default function RootLayout({
         <FloatingPricing />
 
         <Footer />
+
+        <Analytics />
       </body>
     </html>
   );
