@@ -1,9 +1,4 @@
-import {
-  Radio,
-  FlaskConical,
-  FolderGit2,
-  ArrowUpRight,
-} from "lucide-react";
+import { ArrowUpRight, FlaskConical, FolderGit2, Radio } from "lucide-react";
 
 const pillars = [
   {
@@ -25,93 +20,50 @@ const pillars = [
 
 export default function About() {
   return (
-    <section id="about" className="section !pb-12 md:!pb-16">
+    <section id="about" className="section bg-white">
       <div className="shell">
-
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-16">
-
-          {/* =====================================================
-              LEFT — INTRODUCTION
-          ===================================================== */}
-
-          <div>
-            <p className="section-label mb-4">
-              {"// Why The Hacker Smith"}
+        <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:gap-16">
+          <div className="max-w-xl">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-[#137E88]">
+              About The Hacker Smith
             </p>
-
-            <h2 className="heading-lg">
-              Learn.{" "}
-              <span className="text-brand">
-                Practice.
-              </span>{" "}
-              Build.
+            <h2 className="text-3xl font-bold leading-tight tracking-tight text-[#10243A] sm:text-4xl">
+              Learn through practice. Build with purpose.
             </h2>
-
-            <p className="body-text mt-6">
-              The Hacker Smith focuses on practical learning instead of
-              passive theory. Every program is designed around one simple
-              learning loop:
+            <p className="mt-5 text-[16px] leading-7 text-[#526477]">
+              The Hacker Smith offers practical technology education across
+              Cybersecurity, Ethical Hacking, and Data Science &amp; AI.
+              Instructor-led learning is supported by guided exercises and
+              projects that help learners apply the concepts they study.
             </p>
-
-            <div className="mt-5 inline-flex items-center rounded-xl border border-cyan-400/15 bg-cyan-400/[0.04] px-4 py-3">
-              <span className="font-mono text-sm font-medium text-[#00e5ff]">
-                learn → practice → build → advance
-              </span>
-            </div>
-
-            <p className="body-text mt-5">
-              You don't just study technology — you work with it through
-              hands-on learning, real-world scenarios, practical projects,
-              and career-focused training.
+            <p className="mt-4 text-[16px] leading-7 text-[#526477]">
+              Programs are delivered online, with Foundation and Career
+              Accelerator pathways for different learning goals.
             </p>
-
-            <div className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-[#8f9fa8]">
-              Explore our core technology areas
-              <ArrowUpRight className="h-4 w-4 text-[#00e5ff]" />
-            </div>
+            <a
+              href="#programs"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#137E88] transition-colors hover:text-[#10243A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20C9D8] focus-visible:ring-offset-2"
+            >
+              Explore our learning areas
+              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+            </a>
           </div>
 
-          {/* =====================================================
-              RIGHT — CORE AREAS
-          ===================================================== */}
-
-          <div className="grid items-start gap-4 sm:grid-cols-3">
-
-            {pillars.map((pillar, index) => {
-              const Icon = pillar.icon;
-
-              return (
-                <article
-                  key={pillar.title}
-                  className="glass-card card-hover self-start !h-fit !min-h-0 p-5 pb-5"
-                >
-                  {/* Number */}
-                  <div className="mb-4 flex items-center justify-between">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-lg border border-cyan-400/20 bg-cyan-400/[0.04] text-[#00e5ff]">
-                      <Icon
-                        className="h-5 w-5"
-                        aria-hidden="true"
-                      />
-                    </div>
-
-                    <span className="font-mono text-[10px] text-[#52656f]">
-                      0{index + 1}
-                    </span>
-                  </div>
-
-                  <h3 className="text-base font-semibold text-white">
-                    {pillar.title}
-                  </h3>
-
-                  <p className="mt-2 text-[13px] leading-relaxed text-[#8f9fa8]">
-                    {pillar.text}
-                  </p>
-
-                  <div className="mt-5 h-px w-8 bg-cyan-400/30" />
-                </article>
-              );
-            })}
-
+          <div className="grid gap-4 sm:grid-cols-3">
+            {pillars.map(({ icon: Icon, title, text }) => (
+              <article
+                key={title}
+                className="h-full rounded-xl border border-[#E2E8F0] bg-[#F4F7FA] p-5"
+              >
+                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-lg bg-white text-[#137E88] shadow-sm">
+                  <Icon className="h-5 w-5" aria-hidden="true" />
+                </div>
+                <h3 className="text-[16px] font-semibold text-[#10243A]">
+                  {title}
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-[#526477]">{text}</p>
+              </article>
+            ))}
           </div>
         </div>
       </div>

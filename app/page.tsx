@@ -1,15 +1,16 @@
 import Hero from "@/components/Hero";
-import Stats from "@/components/Stats";
 import About from "@/components/About";
-import Programs from "@/components/Programs";
+import Programs from "@/components/ProgramsSection";
 import ProgramCTA from "@/components/ProgramCTA";
 import Workshops from "@/components/Workshops";
 import WorkshopCTA from "@/components/WorkshopCTA";
 import LearningApproach from "@/components/LearningApproach";
-import LabPreview from "@/components/LabPreview";
 import Resources from "@/components/Resources";
 import CTA from "@/components/CTA";
+import CareerSupport from "@/components/CareerSupport";
 import FirstCohortPopup from "@/components/FirstCohortPopup";
+import ProgramComparison from "@/components/ProgramComparison";
+import FAQ from "@/components/FAQ";
 
 
 export default function HomePage() {
@@ -17,15 +18,16 @@ export default function HomePage() {
     <div className="min-h-screen bg-base">
       <main>
         <Hero />
-        <Stats />
         <About />
         <Programs />
+        <ProgramComparison />
         <ProgramCTA />
+        <LearningApproach />
+        <CareerSupport />
         <Workshops />
         <WorkshopCTA />
-        <LearningApproach />
-        <LabPreview />
         <Resources />
+        <FAQ />
         <CTA />
         <FirstCohortPopup />
       </main>

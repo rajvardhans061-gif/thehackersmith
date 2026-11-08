@@ -10,6 +10,8 @@ const columns = [
       { label: "Workshops", href: "/#workshops" },
       { label: "Resources", href: "/#resources" },
       { label: "About", href: "/#about" },
+      { label: "Program Comparison", href: "/#program-comparison" },
+      { label: "FAQs", href: "/#faq" },
     ],
   },
   {
@@ -24,9 +26,10 @@ const columns = [
     heading: "Connect",
     links: [
       { label: "Contact", href: "mailto:training@thehackersmith.com" },
+      { label: "Privacy Policy", href: "/privacy-policy" },
       {
         label: "LinkedIn",
-        href: "https://www.linkedin.com/company/thehackersmith",
+        href: "https://www.linkedin.com/company/the-hacker-smith",
       },
       {
         label: "YouTube",
@@ -43,7 +46,7 @@ const columns = [
 const socials = [
   {
     icon: Linkedin,
-    href: "https://www.linkedin.com/company/thehackersmith",
+    href: "https://www.linkedin.com/company/the-hacker-smith",
     label: "LinkedIn",
   },
   {
@@ -65,15 +68,8 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-cyan-400/10 bg-[#02080f]">
-
-      {/* Background glow */}
-      <div
-        className="pointer-events-none absolute -bottom-48 left-1/2 h-[450px] w-[800px] -translate-x-1/2 rounded-full bg-cyan-400/[0.035] blur-[130px]"
-        aria-hidden="true"
-      />
-
-      <div className="shell relative py-14 md:py-16">
+  <footer className="border-t border-[#233B4D] bg-[#071827]">
+      <div className="shell py-14 md:py-16">
 
         {/* Main Footer */}
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
@@ -94,7 +90,7 @@ export default function Footer() {
               />
             </Link>
 
-            <p className="mt-5 max-w-sm text-sm leading-7 text-[#8f9fa8]">
+            <p className="mt-5 max-w-sm text-sm leading-7 text-[#A9BAC8]">
               Practical technology education designed to help students,
               professionals, and organizations build real-world skills
               through focused learning, practical training, and
@@ -107,7 +103,7 @@ export default function Footer() {
                 (item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-white/[0.08] bg-white/[0.025] px-3 py-1.5 text-[10px] font-medium text-[#7f919a]"
+                    className="rounded-full border border-[#233B4D] bg-[#0D2235] px-3 py-1.5 text-[10px] font-medium text-[#A9BAC8]"
                   >
                     {item}
                   </span>
@@ -130,7 +126,7 @@ export default function Footer() {
                       : undefined
                   }
                   aria-label={social.label}
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.02] text-[#8f9fa8] transition-all duration-200 hover:border-cyan-400/30 hover:bg-cyan-400/[0.05] hover:text-[#00e5ff]"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#233B4D] bg-[#0D2235] text-[#A9BAC8] transition-colors duration-200 hover:border-[#20C9D8] hover:text-[#20C9D8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20C9D8]"
                 >
                   <social.icon className="h-4 w-4" aria-hidden="true" />
                 </a>
@@ -141,7 +137,7 @@ export default function Footer() {
           {/* Footer Columns */}
           {columns.map((column) => (
             <nav key={column.heading} aria-label={column.heading}>
-              <h3 className="font-mono text-[10px] font-semibold uppercase tracking-[0.25em] text-[#6f818b]">
+              <h3 className="font-mono text-[10px] font-semibold uppercase tracking-[0.25em] text-[#A9BAC8]">
                 {column.heading}
               </h3>
 
@@ -166,7 +162,7 @@ export default function Footer() {
                               ? "noopener noreferrer"
                               : undefined
                           }
-                          className="group inline-flex items-center gap-1.5 text-sm text-[#8f9fa8] transition-colors hover:text-[#00e5ff]"
+                          className="group inline-flex items-center gap-1.5 text-sm text-[#A9BAC8] transition-colors hover:text-[#20C9D8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20C9D8]"
                         >
                           {link.label}
 
@@ -177,7 +173,7 @@ export default function Footer() {
                       ) : (
                         <Link
                           href={link.href}
-                          className="text-sm text-[#8f9fa8] transition-colors hover:text-[#00e5ff]"
+                          className="text-sm text-[#A9BAC8] transition-colors hover:text-[#20C9D8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20C9D8]"
                         >
                           {link.label}
                         </Link>
@@ -191,18 +187,18 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-14 flex flex-col gap-5 border-t border-white/[0.07] pt-7 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-5 border-t border-[#233B4D] pt-7 sm:flex-row sm:items-center sm:justify-between">
 
-          <p className="text-xs text-[#5f717b]">
+          <p className="text-xs text-[#A9BAC8]">
             © 2026 The Hacker Smith. All rights reserved.
           </p>
 
           <div className="flex flex-col gap-2 sm:items-end">
-            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#52656f]">
+            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#A9BAC8]">
               Learn → Practice → Build → Advance
             </p>
 
-            <p className="text-xs text-[#6f818b]">
+            <p className="text-xs text-[#A9BAC8]">
               Build Skills. Build Careers. Build With Technology.
             </p>
           </div>

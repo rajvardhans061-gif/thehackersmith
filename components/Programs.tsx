@@ -1,140 +1,59 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+
 import { programs } from "@/data/programs";
+import ProgramCard from "@/components/ProgramCard";
 
 export default function Programs() {
   return (
-    <section id="programs" className="section bg-base">
+    <section id="programs" className="section bg-[#0D2235]">
       <div className="shell">
-        {/* Section Header */}
-        <div className="mb-12 max-w-3xl">
-          <div className="section-label mb-4">
-            // Our Programs
-          </div>
-
-          <h2 className="heading-lg mb-5">
-            Focused programs for{" "}
-            <span className="text-gradient-cyan">
-              real technology careers.
-            </span>
+        <div className="mx-auto mb-12 max-w-2xl text-center">
+          <p className="font-mono text-xs uppercase tracking-[0.18em] text-[#36B7A8]">
+            Practical Technology Education
+          </p>
+          <h2 className="mt-3 text-3xl font-bold text-[#F4F7FA] sm:text-4xl">
+            Choose Your Learning Path
           </h2>
-
-          <p className="body-text max-w-2xl">
-            Practical, instructor-led programs designed to help you build
-            technical knowledge, gain hands-on experience and develop
-            career-ready technology skills.
+          <p className="mt-4 text-[16px] leading-7 text-[#A9BAC8]">
+            Build practical skills across cybersecurity, ethical hacking, and data science and AI.
           </p>
         </div>
 
-        {/* Program Cards */}
-        <div className="grid gap-6 lg:grid-cols-3">
-          {programs.map((program, index) => {
-            const Icon = program.icon;
-
-            return (
-              <article
-                key={program.slug}
-                className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border bg-panel/80 p-7 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 ${
-                  program.featured
-                    ? "border-cyan-400/40 shadow-[0_0_35px_rgba(0,229,255,0.08)]"
-                    : "border-cyan-400/15 hover:border-cyan-400/35"
-                }`}
+        <div className="space-y-12">
+          {([
+            { pathway: "Foundation", title: "Foundation Programs" },
+            {
+              pathway: "Career Accelerator",
+              title: "Career Accelerator Programs",
+            },
+          ] as const).map(({ pathway, title }) => (
+            <section key={pathway} aria-labelledby={`home-programs-${pathway}`}>
+              <h3
+                id={`home-programs-${pathway}`}
+                className="mb-6 text-2xl font-bold text-[#F4F7FA]"
               >
-                {/* Top Glow */}
-                <div className="pointer-events-none absolute -right-16 -top-16 h-32 w-32 rounded-full bg-cyan-400/10 blur-3xl transition-opacity duration-300 group-hover:opacity-100" />
+                {title}
+              </h3>
+              <div className="grid items-stretch gap-6 md:grid-cols-2 xl:grid-cols-3">
+                {programs
+                  .filter((program) => program.pathway === pathway)
+                  .map((program) => (
+                    <ProgramCard key={program.slug} program={program} />
+                  ))}
+              </div>
+            </section>
+          ))}
+        </div>
 
-                {/* Header */}
-                <div className="relative mb-7 flex items-start justify-between">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/5 text-cyan-300">
-                    <Icon size={24} strokeWidth={1.8} />
-                  </div>
-
-                  <span className="font-mono text-xs text-slate-500">
-                    0{index + 1}
-                  </span>
-                </div>
-
-                {/* Category */}
-                <div className="mb-3 font-mono text-xs uppercase tracking-[0.18em] text-cyan-300">
-                  {program.category}
-                </div>
-
-                {/* Title */}
-                <h3 className="mb-4 text-2xl font-bold tracking-tight text-white">
-                  {program.title}
-                </h3>
-
-                {/* Description */}
-                <p className="mb-7 text-sm leading-7 text-slate-400">
-                  {program.description}
-                </p>
-
-                {/* Topics */}
-                <div className="mb-7">
-                  <div className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
-                    Core Topics
-                  </div>
-
-                  <div className="flex flex-wrap gap-2">
-                    {program.topics.slice(0, 6).map((topic) => (
-                      <span
-                        key={topic}
-                        className="rounded-full border border-cyan-400/10 bg-cyan-400/[0.03] px-3 py-1.5 text-xs text-slate-300"
-                      >
-                        {topic}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Outcomes */}
-                <div className="mb-8">
-                  <div className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
-                    You Will Learn
-                  </div>
-
-                  <ul className="space-y-2.5">
-                    {program.outcomes.slice(0, 4).map((outcome) => (
-                      <li
-                        key={outcome}
-                        className="flex items-start gap-2.5 text-sm leading-6 text-slate-400"
-                      >
-                        <CheckCircle2
-                          size={16}
-                          className="mt-1 shrink-0 text-cyan-400"
-                        />
-                        <span>{outcome}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Footer */}
-                <div className="mt-auto border-t border-white/5 pt-5">
-                  <div className="mb-5 flex items-center justify-between text-xs">
-                    <span className="text-slate-500">
-                      {program.level}
-                    </span>
-
-                    <span className="font-mono text-cyan-300">
-                      {program.format}
-                    </span>
-                  </div>
-
-                  <Link
-                    href={`/programs/${program.slug}`}
-                    className="group/link inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-cyan-300"
-                  >
-                    Explore Program
-                    <ArrowRight
-                      size={17}
-                      className="transition-transform duration-200 group-hover/link:translate-x-1"
-                    />
-                  </Link>
-                </div>
-              </article>
-            );
-          })}
+        <div className="mt-10 text-center">
+          <Link
+            href="/enroll"
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 font-semibold text-[#02141c] transition-colors hover:bg-brand-bright focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D2235]"
+          >
+            Enquire About a Program
+            <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>

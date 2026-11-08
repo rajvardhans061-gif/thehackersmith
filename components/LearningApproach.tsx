@@ -1,94 +1,76 @@
-const steps = [
+import {
+  CalendarDays,
+  FolderKanban,
+  MonitorPlay,
+  Wrench,
+} from "lucide-react";
+
+import { programs } from "@/data/programs";
+
+const delivery = programs[0].deliveryFormat;
+const everyProgramHasProjects = programs.every(
+  (program) => program.projects.length > 0
+);
+
+const features = [
   {
-    number: "01",
-    title: "Understand",
-    text: "Build strong technical foundations with clear, structured instruction.",
+    icon: MonitorPlay,
+    title: "Live online instruction",
+    description: delivery.mode,
   },
   {
-    number: "02",
-    title: "Practice",
-    text: "Apply concepts through labs, exercises and guided repetition.",
+    icon: CalendarDays,
+    title: "Weekend sessions",
+    description: delivery.schedule,
   },
   {
-    number: "03",
-    title: "Build",
-    text: "Create projects and portfolio work that prove your ability.",
+    icon: Wrench,
+    title: "Hands-on practice",
+    description: delivery.approach,
   },
   {
-    number: "04",
-    title: "Advance",
-    text: "Develop skills for real technology careers — and keep growing.",
+    icon: FolderKanban,
+    title: "Practical projects",
+    description: everyProgramHasProjects
+      ? "Every pathway includes practical project work."
+      : "Project work is included in selected pathways.",
   },
 ];
 
 export default function LearningApproach() {
   return (
-    <section className="section relative overflow-hidden border-y border-cyan-400/10 bg-[#030b12]">
-      {/* Background Glow */}
-      <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-96 -translate-x-1/2 rounded-full bg-cyan-400/[0.04] blur-3xl" />
-
-      <div className="shell relative">
-        {/* Header */}
+    <section className="section bg-[#F4F7FA]">
+      <div className="shell">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="section-label mb-4">
-            // Learning Approach
-          </div>
-
-          <h2 className="heading-lg">
-            A process designed for{" "}
-            <span className="text-gradient-cyan">
-              lasting skill.
-            </span>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#137E88]">
+            Learning Experience
+          </p>
+          <h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight text-[#10243A] sm:text-4xl">
+            Learn with guidance. Build through practice.
           </h2>
-
-          <p className="body-text mx-auto mt-6 max-w-2xl">
-            Technology skills are built through a process — not passive
-            learning. Our approach moves learners from understanding concepts
-            to applying them, building with them and advancing with confidence.
+          <p className="mx-auto mt-4 max-w-2xl text-[16px] leading-7 text-[#526477]">
+            Live online instruction is paired with guided exercises, feedback,
+            and practical work across the program pathways.
           </p>
         </div>
 
-        {/* Steps */}
-        <div className="relative mt-16">
-          {/* Connecting Line */}
-          <div
-            className="absolute left-[12%] right-[12%] top-7 hidden h-px bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent md:block"
-            aria-hidden="true"
-          />
-
-          <ol className="grid gap-8 md:grid-cols-4 md:gap-5">
-            {steps.map((step) => (
-              <li
-                key={step.number}
-                className="group relative text-center"
-              >
-                {/* Number */}
-                <div className="relative z-10 mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-cyan-400/30 bg-[#06131d] font-mono text-sm font-bold text-cyan-300 shadow-[0_0_25px_rgba(0,229,255,0.08)] transition-all duration-300 group-hover:border-cyan-400/60 group-hover:shadow-[0_0_30px_rgba(0,229,255,0.15)]">
-                  {step.number}
-                </div>
-
-                {/* Content */}
-                <div className="mt-6 rounded-2xl border border-cyan-400/10 bg-cyan-400/[0.02] p-6 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-cyan-400/25 group-hover:bg-cyan-400/[0.035]">
-                  <h3 className="text-lg font-bold text-white">
-                    {step.title}
-                  </h3>
-
-                  <p className="mx-auto mt-3 max-w-[240px] text-sm leading-6 text-slate-400">
-                    {step.text}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </div>
-
-        {/* Bottom Philosophy */}
-        <div className="mt-14 flex justify-center">
-          <div className="rounded-full border border-cyan-400/15 bg-cyan-400/[0.03] px-5 py-2.5">
-            <span className="font-mono text-xs tracking-[0.12em] text-cyan-300/80">
-              UNDERSTAND → PRACTICE → BUILD → ADVANCE
-            </span>
-          </div>
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          {features.map(({ icon: Icon, title, description }) => (
+            <article
+              key={title}
+              className="h-full rounded-xl border border-[#E2E8F0] bg-white p-5 sm:p-6"
+            >
+              <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#F4F7FA] text-[#137E88]">
+                <Icon className="h-5 w-5" aria-hidden="true" />
+              </div>
+              <h3 className="mt-5 text-[16px] font-semibold text-[#10243A]">
+                {title}
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-[#526477]">
+                {description}
+              </p>
+            </article>
+          ))}
         </div>
       </div>
     </section>

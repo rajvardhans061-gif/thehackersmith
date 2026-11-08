@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Search, Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { useState } from "react";
 
 const navItems = [
@@ -25,10 +25,7 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl">
 
         {/* Main Navigation */}
-        <nav className="relative flex min-h-[76px] items-center justify-between rounded-2xl border border-cyan-400/15 bg-[#06131d]/90 px-4 shadow-[0_12px_45px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:px-6 lg:min-h-[82px] lg:px-7">
-
-          {/* Subtle cyan glow */}
-          <div className="pointer-events-none absolute inset-0 rounded-2xl bg-[radial-gradient(circle_at_50%_-100%,rgba(0,229,255,0.10),transparent_55%)]" />
+        <nav className="relative flex min-h-[76px] items-center justify-between rounded-2xl border border-[#233B4D] bg-[#0D2235] px-4 shadow-[0_12px_32px_rgba(0,0,0,0.25)] sm:px-6 lg:min-h-[82px] lg:px-7">
 
           {/* Logo */}
           <Link
@@ -52,11 +49,11 @@ export default function Navbar() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="group relative py-2 text-[15px] font-medium text-[#c6d1d7] transition-colors duration-200 hover:text-[#00e5ff]"
+                className="group relative rounded-sm py-2 text-[15px] font-medium text-[#DCE6ED] transition-colors duration-200 hover:text-[#20C9D8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20C9D8]"
               >
                 {item.label}
 
-                <span className="absolute bottom-0 left-1/2 h-px w-0 -translate-x-1/2 bg-[#00e5ff] shadow-[0_0_8px_rgba(0,229,255,0.8)] transition-all duration-200 group-hover:w-full" />
+                <span className="absolute bottom-0 left-1/2 h-px w-0 -translate-x-1/2 bg-[#20C9D8] transition-all duration-200 group-hover:w-full" />
               </Link>
             ))}
           </div>
@@ -64,19 +61,10 @@ export default function Navbar() {
           {/* Desktop Actions */}
           <div className="relative z-10 hidden items-center gap-2.5 lg:flex">
 
-            {/* Search */}
-            <button
-              type="button"
-              aria-label="Search"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/[0.07] text-[#a7b5bd] transition-all duration-200 hover:border-cyan-400/25 hover:bg-cyan-400/[0.06] hover:text-[#00e5ff]"
-            >
-              <Search className="h-[18px] w-[18px]" />
-            </button>
-
             {/* Contact */}
             <Link
               href="/#contact"
-              className="rounded-full border border-white/[0.12] px-4 py-2.5 text-sm font-medium text-[#d8e1e5] transition-all duration-200 hover:border-cyan-400/40 hover:text-[#00e5ff]"
+              className="rounded-full border border-[#526477] px-4 py-2.5 text-sm font-medium text-[#DCE6ED] transition-colors duration-200 hover:border-[#20C9D8] hover:text-[#20C9D8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20C9D8] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D2235]"
             >
               Contact
             </Link>
@@ -84,7 +72,7 @@ export default function Navbar() {
             {/* Primary CTA */}
             <Link
               href="/#programs"
-              className="group inline-flex items-center gap-2 rounded-full bg-[#00e5ff] px-5 py-2.5 text-sm font-bold text-[#02141c] shadow-[0_8px_28px_rgba(0,229,255,0.16)] transition-all duration-200 hover:bg-[#12efff] hover:shadow-[0_10px_32px_rgba(0,229,255,0.28)]"
+              className="group inline-flex items-center gap-2 rounded-lg bg-[#20C9D8] px-5 py-2.5 text-sm font-bold text-[#10243A] transition-colors duration-200 hover:bg-[#36B7A8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20C9D8] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D2235]"
             >
               Explore Programs
               <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
@@ -97,7 +85,7 @@ export default function Navbar() {
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="relative z-10 flex h-11 w-11 items-center justify-center rounded-xl border border-white/[0.10] bg-white/[0.04] text-[#d8e1e5] transition-all duration-200 hover:border-cyan-400/30 hover:bg-cyan-400/[0.06] hover:text-[#00e5ff] lg:hidden"
+            className="relative z-10 flex h-11 w-11 items-center justify-center rounded-xl border border-[#526477] bg-[#123047] text-[#DCE6ED] transition-colors duration-200 hover:border-[#20C9D8] hover:text-[#20C9D8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20C9D8] lg:hidden"
           >
             {mobileOpen ? (
               <X className="h-5 w-5" />
@@ -109,11 +97,7 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         {mobileOpen && (
-          <div className="relative mt-3 overflow-hidden rounded-2xl border border-cyan-400/15 bg-[#06131d]/95 p-3 shadow-[0_20px_50px_rgba(0,0,0,0.45)] backdrop-blur-xl lg:hidden">
-
-            {/* Mobile glow */}
-            <div className="pointer-events-none absolute right-0 top-0 h-40 w-40 rounded-full bg-[#00e5ff]/[0.06] blur-3xl" />
-
+          <div className="relative mt-3 overflow-hidden rounded-2xl border border-[#233B4D] bg-[#0D2235] p-3 shadow-[0_20px_40px_rgba(0,0,0,0.3)] lg:hidden">
             <div className="relative flex flex-col">
 
               {navItems.map((item) => (
@@ -121,7 +105,7 @@ export default function Navbar() {
                   key={item.label}
                   href={item.href}
                   onClick={closeMobile}
-                  className="rounded-xl px-4 py-3.5 text-sm font-medium text-[#c6d1d7] transition-colors hover:bg-cyan-400/[0.06] hover:text-[#00e5ff]"
+                  className="rounded-xl px-4 py-3.5 text-sm font-medium text-[#DCE6ED] transition-colors hover:bg-[#123047] hover:text-[#20C9D8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20C9D8]"
                 >
                   {item.label}
                 </Link>
@@ -130,7 +114,7 @@ export default function Navbar() {
               <Link
                 href="/#contact"
                 onClick={closeMobile}
-                className="rounded-xl px-4 py-3.5 text-sm font-medium text-[#c6d1d7] transition-colors hover:bg-cyan-400/[0.06] hover:text-[#00e5ff]"
+                className="rounded-xl px-4 py-3.5 text-sm font-medium text-[#DCE6ED] transition-colors hover:bg-[#123047] hover:text-[#20C9D8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20C9D8]"
               >
                 Contact
               </Link>
@@ -140,7 +124,7 @@ export default function Navbar() {
               <Link
                 href="/#programs"
                 onClick={closeMobile}
-                className="group inline-flex items-center justify-center gap-2 rounded-xl bg-[#00e5ff] px-5 py-3.5 text-sm font-bold text-[#02141c] transition-all duration-200 hover:bg-[#12efff]"
+                className="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#20C9D8] px-5 py-3.5 text-sm font-bold text-[#10243A] transition-colors duration-200 hover:bg-[#36B7A8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20C9D8] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D2235]"
               >
                 Explore Programs
                 <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />

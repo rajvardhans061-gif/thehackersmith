@@ -3,9 +3,9 @@ import { ArrowRight, MessageCircle } from "lucide-react";
 
 export default function ProgramCTA() {
   return (
-    <section className="relative overflow-hidden bg-base py-10">
+    <section className="relative overflow-hidden bg-[#0D2235] py-10">
       <div className="shell">
-        <div className="relative overflow-hidden rounded-2xl border border-cyan-400/20 bg-[#06131d] px-6 py-10 md:px-10 md:py-12">
+        <div className="relative overflow-hidden rounded-2xl border border-[#233B4D] bg-[#123047] px-6 py-10 md:px-10 md:py-12">
           <div className="pointer-events-none absolute -right-16 -top-20 h-56 w-56 rounded-full bg-cyan-400/[0.07] blur-3xl" />
 
           <div className="relative flex flex-col items-start justify-between gap-7 md:flex-row md:items-center">

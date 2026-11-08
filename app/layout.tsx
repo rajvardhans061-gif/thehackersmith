@@ -6,6 +6,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingPricing from "@/components/FloatingPricing";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
@@ -54,6 +55,7 @@ export default function RootLayout({
 
         {children}
         <FloatingPricing />
+        <FloatingWhatsApp />
 
         <Footer />
 
