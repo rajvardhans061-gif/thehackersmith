@@ -4,11 +4,9 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { FormEvent } from "react";
-import {
-  getProgramBySlug,
-  getProgramSlugFromSearch,
-  programs,
-} from "@/data/programs";
+import { getProgramBySlug, pilotProgram } from "@/data/programs";
+
+const selectedPilot = pilotProgram!;
 
 const experienceOptions = [
   "Beginner",
@@ -20,7 +18,7 @@ const experienceOptions = [
 
 export default function EnrollmentForm() {
   const [experience, setExperience] = useState("Beginner");
-  const [programSlug, setProgramSlug] = useState(programs[0].slug);
+  const [programSlug, setProgramSlug] = useState(selectedPilot.slug);
   const [busy, setBusy] = useState(false);
   const [status, setStatus] = useState("");
   const [success, setSuccess] = useState(false);
@@ -28,22 +26,18 @@ export default function EnrollmentForm() {
   const [goal, setGoal] = useState("");
 
   useEffect(() => {
-    setProgramSlug(getProgramSlugFromSearch(window.location.search));
     const isConsultation =
       new URLSearchParams(window.location.search).get("intent") ===
       "consultation";
     setConsultationRequest(isConsultation);
     if (isConsultation) {
-      const requestedProgram =
-        getProgramBySlug(getProgramSlugFromSearch(window.location.search)) ??
-        programs[0];
       setGoal(
-        `I would like to request a free consultation about ${requestedProgram.title}.`
+        `I would like to request a free consultation about ${selectedPilot.title}.`
       );
     }
   }, []);
 
-  const selectedProgram = getProgramBySlug(programSlug) ?? programs[0];
+  const selectedProgram = getProgramBySlug(programSlug) ?? selectedPilot;
   const selectedPrice = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
@@ -97,7 +91,7 @@ export default function EnrollmentForm() {
 
       form.reset();
       setExperience("Beginner");
-      setProgramSlug(programs[0].slug);
+      setProgramSlug(selectedPilot.slug);
       setGoal("");
       setSuccess(true);
 
@@ -139,9 +133,9 @@ export default function EnrollmentForm() {
             </h2>
 
             <p className="mt-2 text-sm leading-6 text-slate-400">
-              Choose from six Foundation and Career Accelerator programs.
-              Live instructor-led online sessions run on Saturdays and
-              Sundays via Zoom.
+              We are currently collecting interest for our first small-group
+              pilot: Ethical Hacking Foundation. This form is an inquiry only;
+              it does not process payment or reserve a place.
             </p>
 
             {consultationRequest && (
@@ -153,11 +147,11 @@ export default function EnrollmentForm() {
 
             <div className="mt-4 rounded-xl border border-cyan-400/15 bg-cyan-400/[0.05] p-4">
               <p className="text-sm font-semibold text-white">
-                Selected program fee:{" "}
+                Intended pilot tuition:{" "}
                 <span className="text-cyan-300">{selectedPrice} USD</span>
               </p>
               <p className="mt-1 text-xs leading-5 text-slate-400">
-                {selectedProgram.title} · {selectedProgram.duration}
+                {selectedProgram.title} · {selectedProgram.duration} · Final schedule, terms, and payment details are confirmed before enrollment.
               </p>
             </div>
           </div>
@@ -253,24 +247,19 @@ export default function EnrollmentForm() {
                 htmlFor="enroll-program"
                 className="mb-2 block text-sm font-medium text-slate-200"
               >
-                Select your program *
+                Pilot program
               </label>
 
               <select
                 id="enroll-program"
                 name="programSlug"
                 value={programSlug}
-                onChange={(event) =>
-                  setProgramSlug(event.target.value)
-                }
-                required
+                disabled
                 className={fieldClass}
               >
-                {programs.map((program) => (
-                  <option key={program.slug} value={program.slug}>
-                    {program.title} — {program.duration} — ${program.priceUsd} USD
-                  </option>
-                ))}
+                <option value={selectedPilot.slug}>
+                  {selectedPilot.title} — {selectedPilot.duration}
+                </option>
               </select>
             </div>
 

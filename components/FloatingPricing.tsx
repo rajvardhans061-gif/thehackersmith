@@ -47,10 +47,10 @@ export default function FloatingPricing() {
               The Hacker Smith Programs
             </p>
             <h2 id="ths-pricing-title" className="pr-8 text-2xl font-bold tracking-tight sm:text-3xl">
-              Explore six practical learning pathways
+              Explore the pilot program
             </h2>
             <p className="mt-3 text-sm leading-6 text-slate-400">
-              Choose a Foundation or Career Accelerator program in Cybersecurity, Ethical Hacking, or Data Science &amp; AI.
+              Ethical Hacking Foundation is our current pilot. Other pathways are in development.
             </p>
 
             <div className="mt-6 rounded-xl border border-cyan-400/20 bg-cyan-400/[0.05] p-5">

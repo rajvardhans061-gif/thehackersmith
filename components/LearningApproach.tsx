@@ -5,12 +5,9 @@ import {
   Wrench,
 } from "lucide-react";
 
-import { programs } from "@/data/programs";
+import { pilotProgram } from "@/data/programs";
 
-const delivery = programs[0].deliveryFormat;
-const everyProgramHasProjects = programs.every(
-  (program) => program.projects.length > 0
-);
+const delivery = pilotProgram!.deliveryFormat;
 
 const features = [
   {
@@ -31,9 +28,7 @@ const features = [
   {
     icon: FolderKanban,
     title: "Practical projects",
-    description: everyProgramHasProjects
-      ? "Every pathway includes practical project work."
-      : "Project work is included in selected pathways.",
+    description: "The pilot includes a beginner authorized security-testing project.",
   },
 ];
 
@@ -49,8 +44,8 @@ export default function LearningApproach() {
             Learn with guidance. Build through practice.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-[16px] leading-7 text-[#526477]">
-            Live online instruction is paired with guided exercises, feedback,
-            and practical work across the program pathways.
+            The pilot learning experience combines live online instruction,
+            authorized exercises, feedback, and a practical project.
           </p>
         </div>
 

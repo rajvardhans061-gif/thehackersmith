@@ -70,13 +70,19 @@ export default async function ProgramPage({ params }: ProgramPageProps) {
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href={`/enroll?program=${program.slug}`}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-cyan-400 px-6 py-3.5 text-sm font-bold text-slate-950 transition hover:bg-cyan-300"
-              >
-                {program.ctaLabel}
-                <ArrowRight size={17} />
-              </Link>
+              {program.availability === "Pilot enrollment" ? (
+                <Link
+                  href={`/enroll?program=${program.slug}`}
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-cyan-400 px-6 py-3.5 text-sm font-bold text-slate-950 transition hover:bg-cyan-300"
+                >
+                  Request Pilot Details
+                  <ArrowRight size={17} />
+                </Link>
+              ) : (
+                <span className="inline-flex items-center justify-center rounded-full border border-cyan-400/20 px-5 py-3 text-sm font-semibold text-cyan-100">
+                  This pathway is in development
+                </span>
+              )}
               <span className="inline-flex items-center justify-center rounded-full border border-cyan-400/20 px-5 py-3 text-sm font-semibold text-cyan-100">
                 {formatProgramPrice(program.priceUsd)} USD
               </span>
@@ -158,7 +164,7 @@ export default async function ProgramPage({ params }: ProgramPageProps) {
               </ul>
             </section>
 
-            {program.careerSupport && (
+            {program.careerSupport && program.availability === "Pilot enrollment" && (
               <section className="rounded-2xl border border-cyan-400/25 bg-[#06131d] p-6 md:p-8">
                 <p className="section-label mb-2">Career preparation</p>
                 <h2 className="text-2xl font-bold text-white md:text-3xl">
@@ -198,13 +204,17 @@ export default async function ProgramPage({ params }: ProgramPageProps) {
               <p className="text-sm font-semibold text-white">
                 {formatProgramPrice(program.priceUsd)} USD
               </p>
-              <Link
-                href={`/enroll?program=${program.slug}`}
-                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-cyan-400 px-5 py-3 font-bold text-slate-950 transition hover:bg-cyan-300"
-              >
-                {program.ctaLabel}
-                <ArrowRight size={17} />
-              </Link>
+              {program.availability === "Pilot enrollment" ? (
+                <Link
+                  href={`/enroll?program=${program.slug}`}
+                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-cyan-400 px-5 py-3 font-bold text-slate-950 transition hover:bg-cyan-300"
+                >
+                  Request Pilot Details
+                  <ArrowRight size={17} />
+                </Link>
+              ) : (
+                <p className="mt-6 text-sm leading-6 text-slate-400">This curriculum is a planned outline. Enrollment is not open.</p>
+              )}
             </div>
           </aside>
         </div>

@@ -10,16 +10,15 @@ const columns = [
       { label: "Workshops", href: "/#workshops" },
       { label: "Resources", href: "/#resources" },
       { label: "About", href: "/#about" },
-      { label: "Program Comparison", href: "/#program-comparison" },
       { label: "FAQs", href: "/#faq" },
     ],
   },
   {
     heading: "Core Areas",
     links: [
-      { label: "Cybersecurity", href: "/#programs" },
-      { label: "Ethical Hacking", href: "/#programs" },
-      { label: "Data Science & AI", href: "/#programs" },
+      { label: "Ethical Hacking Foundation Pilot", href: "/#programs" },
+      { label: "Cybersecurity (in development)", href: "/#programs" },
+      { label: "Data Science & AI (in development)", href: "/#programs" },
     ],
   },
   {
@@ -68,7 +67,7 @@ const socials = [
 
 export default function Footer() {
   return (
-  <footer className="border-t border-[#233B4D] bg-[#071827]">
+  <footer className="border-t border-white/10 bg-[#06101D]">
       <div className="shell py-14 md:py-16">
 
         {/* Main Footer */}
@@ -86,15 +85,14 @@ export default function Footer() {
                 alt="The Hacker Smith"
                 width={190}
                 height={70}
-                className="h-[54px] w-auto object-contain"
+                className="h-[48px] w-auto object-contain"
               />
             </Link>
 
             <p className="mt-5 max-w-sm text-sm leading-7 text-[#A9BAC8]">
-              Practical technology education designed to help students,
-              professionals, and organizations build real-world skills
-              through focused learning, practical training, and
-              career-oriented technology programs.
+              A founder-led technology education venture beginning with a
+              focused Ethical Hacking Foundation pilot. Additional learning
+              pathways are in development.
             </p>
 
             {/* Core areas */}
@@ -103,7 +101,7 @@ export default function Footer() {
                 (item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-[#233B4D] bg-[#0D2235] px-3 py-1.5 text-[10px] font-medium text-[#A9BAC8]"
+                    className="rounded-full border border-white/10 bg-white/[0.035] px-3 py-1.5 text-[11px] font-medium text-[#A9BAC8]"
                   >
                     {item}
                   </span>
@@ -126,7 +124,7 @@ export default function Footer() {
                       : undefined
                   }
                   aria-label={social.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#233B4D] bg-[#0D2235] text-[#A9BAC8] transition-colors duration-200 hover:border-[#20C9D8] hover:text-[#20C9D8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20C9D8]"
+                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.035] text-[#A9BAC8] transition-colors duration-200 hover:border-[#85EFC7]/60 hover:text-[#85EFC7] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#85EFC7]"
                 >
                   <social.icon className="h-4 w-4" aria-hidden="true" />
                 </a>
@@ -187,7 +185,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-14 flex flex-col gap-5 border-t border-[#233B4D] pt-7 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-5 border-t border-white/10 pt-7 sm:flex-row sm:items-center sm:justify-between">
 
           <p className="text-xs text-[#A9BAC8]">
             © 2026 The Hacker Smith. All rights reserved.

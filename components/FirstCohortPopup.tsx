@@ -2,7 +2,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { X, GraduationCap, Clock3, CalendarDays, ArrowRight } from "lucide-react";
+import { X, GraduationCap, CalendarDays, ArrowRight } from "lucide-react";
 
 const SESSION_KEY = "ths_first_cohort_popup_shown";
 
@@ -141,7 +141,7 @@ export default function FirstCohortPopup() {
                 The Hacker Smith
               </p>
               <p className="mt-1 text-xs text-[#a7b5bd]">
-                First Cohort Enrollment
+                First Cohort Pilot
               </p>
             </div>
           </div>
@@ -149,7 +149,7 @@ export default function FirstCohortPopup() {
           <div className="mb-5">
             <span className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/[0.06] px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-[#00e5ff]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#00e5ff]" />
-              Ethical Hacking Foundations
+              Ethical Hacking Foundation
             </span>
 
             <h2
@@ -163,22 +163,16 @@ export default function FirstCohortPopup() {
             </h2>
 
             <p className="mt-3 text-sm leading-6 text-[#a7b5bd]">
-              Get details about our instructor-led ethical hacking program and
-              the upcoming cohort.
+              Request details about our proposed small-group, instructor-led
+              pilot. An inquiry does not reserve a place or take payment.
             </p>
           </div>
 
-          <div className="mb-5 grid grid-cols-3 gap-2">
+            <div className="mb-5 grid grid-cols-2 gap-2">
             <div className="rounded-xl border border-white/[0.07] bg-white/[0.025] p-3">
               <CalendarDays className="mb-2 h-4 w-4 text-[#00e5ff]" />
               <p className="text-sm font-semibold text-white">8 Weeks</p>
               <p className="mt-1 text-[10px] text-[#8296a3]">Program length</p>
-            </div>
-
-            <div className="rounded-xl border border-white/[0.07] bg-white/[0.025] p-3">
-              <Clock3 className="mb-2 h-4 w-4 text-[#00e5ff]" />
-              <p className="text-sm font-semibold text-white">40 Hours</p>
-              <p className="mt-1 text-[10px] text-[#8296a3]">Live training</p>
             </div>
 
             <div className="rounded-xl border border-white/[0.07] bg-white/[0.025] p-3">
@@ -292,11 +286,13 @@ export default function FirstCohortPopup() {
                   </option>
                   <option value="Beginner">Beginner</option>
                   <option value="Student">Student</option>
-                  <option value="Working Professional">
-                    Working Professional
+                  <option value="IT or networking experience">
+                    IT or networking experience
                   </option>
-                  <option value="Career Switcher">Career Switcher</option>
-                  <option value="IT Professional">IT Professional</option>
+                  <option value="Cybersecurity experience">
+                    Cybersecurity experience
+                  </option>
+                  <option value="Career changer">Career changer</option>
                 </select>
               </div>
 
@@ -314,7 +310,7 @@ export default function FirstCohortPopup() {
                 disabled={isSubmitting}
                 className="group flex w-full items-center justify-center gap-2 rounded-full bg-[#00e5ff] px-5 py-3.5 text-sm font-bold text-[#02080f] shadow-[0_8px_30px_rgba(0,229,255,0.12)] transition hover:-translate-y-0.5 hover:bg-[#38edff] disabled:cursor-not-allowed disabled:opacity-60"
               >
-                {isSubmitting ? "Submitting..." : "Request Enrollment Details"}
+                {isSubmitting ? "Submitting..." : "Request Pilot Details"}
                 {!isSubmitting && (
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 )}

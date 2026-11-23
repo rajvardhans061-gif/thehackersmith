@@ -50,14 +50,15 @@ export default function Workshops() {
         <div className="grid items-start gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#137E88]">
-              Workshops
+              Planned workshops
             </p>
             <h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight text-[#10243A] sm:text-4xl">
-              Practical workshops for modern technology.
+              Workshops are in development.
             </h2>
             <p className="mt-4 max-w-xl text-[16px] leading-7 text-[#526477]">
-              Focused instructor-led sessions built around practical
-              technology skills, live demonstrations, and hands-on learning.
+              We plan to introduce focused workshops after validating the first
+              pilot. Workshop dates, formats, and availability have not yet
+              been announced.
             </p>
 
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -96,7 +97,7 @@ export default function Workshops() {
         </div>
         <div className="mt-10 flex flex-col gap-3 border-t border-[#E2E8F0] pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm text-[#526477]">
-            For students, professionals, institutions, and technology teams.
+            Topics shown are planned areas, not currently bookable workshops.
           </p>
           <p className="font-mono text-xs tracking-wide text-[#137E88]">
             LEARN · PRACTICE · BUILD

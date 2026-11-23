@@ -1,10 +1,10 @@
 
-import GoogleFormEmbed from "@/components/GoogleFormEmbed";
+import EnrollmentForm from "@/components/EnrollmentForm";
 
 export const metadata = {
   title: "Enroll | The Hacker Smith",
   description:
-    "Enquire about a Foundation or Career Accelerator program with The Hacker Smith.",
+    "Request details about The Hacker Smith's Ethical Hacking Foundation pilot.",
 };
 
 export default function EnrollPage() {
@@ -17,16 +17,16 @@ export default function EnrollPage() {
           </p>
 
           <h1 className="heading-lg">
-            Start Your Technology Journey.
+            Request pilot details.
           </h1>
 
           <p className="body-text mx-auto mt-4 max-w-2xl">
-            Tell us what you would like to learn. Our team will contact you
-            about the programs and next steps.
+            Tell us about your background and goals. We will contact you with
+            Ethical Hacking Foundation pilot details and next steps.
           </p>
         </div>
 
-        <GoogleFormEmbed />
+        <EnrollmentForm />
 
         <p className="mt-6 text-center text-xs leading-5 text-slate-500">
           Submitting this form is an inquiry, not a payment or a

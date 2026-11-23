@@ -1,40 +1,33 @@
 import Link from "next/link";
-import { programs } from "@/data/programs";
-
-const foundationPrograms = programs.filter(
-  (program) => program.pathway === "Foundation"
-);
 const questions = [
   {
-    question: "What subjects can I study?",
-    answer: `The catalog currently includes ${foundationPrograms
-      .map((program) => program.domain)
-      .join(", ")}. Each subject has a Foundation and a Career Accelerator pathway.`,
+    question: "Which program is currently open for inquiries?",
+    answer: "Ethical Hacking Foundation is the first small-group pilot. Other listed pathways are planned and are not open for enrollment.",
   },
   {
-    question: "How do Foundation and Career Accelerator programs differ?",
+    question: "What does the pilot include?",
     answer:
-      "Foundation programs are 8 weeks and introduce core concepts with guided practice and a beginner project. Career Accelerator programs are 6 months and cover a broader set of practical topics, projects, and career preparation. Career support services are listed on the Career Accelerator program pages.",
+      "The 8-week pilot introduces ethical hacking fundamentals through live online instruction, authorized practice, guided assignments, and a beginner project. The detailed schedule and learner terms are shared before enrollment.",
   },
   {
-    question: "How are classes delivered?",
+    question: "Does an inquiry enroll me or take payment?",
     answer:
-      "Programs use live instructor-led online sessions via Zoom, scheduled on Saturdays and Sundays. Program pages describe the learning activities and curriculum.",
+      "No. An inquiry only tells us you are interested. It does not process payment, reserve a seat, or create an enrollment agreement.",
   },
   {
     question: "Do I need prior experience?",
     answer:
-      "The Foundation programs are described as introductory or beginner pathways. Review the individual program page to see its topics and learning outcomes, or send an enquiry if you are unsure which pathway fits.",
+      "Ethical Hacking Foundation is designed as an introductory pathway. Review its program page for topics and learning outcomes, or send an inquiry if you are unsure whether it fits your experience.",
   },
   {
-    question: "Does an enquiry enroll me or take payment?",
+    question: "Does THS provide job placement?",
     answer:
-      "No. The enquiry form requests information only. It does not process payment or reserve a seat. The team follows up with program and next-step information.",
+      "No. THS does not promise job placement, employer access, or employment outcomes. Any career guidance is described separately and does not guarantee a job.",
   },
   {
     question: "Can I request a free consultation?",
     answer:
-      "Yes. Use the free consultation request button and submit the enquiry form. You can edit the prefilled consultation request and add the program or questions you want to discuss.",
+      "Yes. Use the pilot-details button and submit the inquiry form. You can add your questions and request a free consultation.",
   },
 ];
 

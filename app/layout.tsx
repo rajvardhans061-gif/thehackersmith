@@ -24,20 +24,17 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "The Hacker Smith | Practical Technology Education",
   description:
-    "The Hacker Smith provides practical technology education across cybersecurity, networking, cloud, AI and IT.",
+    "The Hacker Smith is developing practical technology education and is introducing an Ethical Hacking Foundation pilot.",
   keywords: [
     "technology education",
     "cybersecurity training",
-    "networking courses",
-    "cloud training",
-    "AI education",
-    "IT training",
-    "corporate technology training",
+    "ethical hacking foundation",
+    "technology education pilot",
   ],
   openGraph: {
     title: "The Hacker Smith | Practical Technology Education",
     description:
-      "Practical, instructor-led technology education across cybersecurity, networking, cloud, AI and IT.",
+      "An instructor-guided Ethical Hacking Foundation pilot from The Hacker Smith.",
     siteName: "The Hacker Smith",
     type: "website",
   },

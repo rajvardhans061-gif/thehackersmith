@@ -31,6 +31,7 @@ export type Program = {
   pathway: ProgramPathway;
   duration: "8 Weeks" | "6 Months";
   priceUsd: number;
+  availability: "Pilot enrollment" | "In development";
   shortDescription: string;
   fullDescription: string;
   learningOutcomes: string[];
@@ -81,6 +82,7 @@ export const programs: Program[] = [
     pathway: "Foundation",
     duration: "8 Weeks",
     priceUsd: 399,
+    availability: "In development",
     shortDescription:
       "Build essential cybersecurity knowledge through guided labs, foundational security skills, and a beginner project.",
     fullDescription:
@@ -131,6 +133,7 @@ export const programs: Program[] = [
     pathway: "Career Accelerator",
     duration: "6 Months",
     priceUsd: 999,
+    availability: "In development",
     shortDescription:
       "Develop practical cybersecurity, SOC, SIEM, investigation, and career-readiness skills through a structured six-month pathway.",
     fullDescription:
@@ -187,6 +190,7 @@ export const programs: Program[] = [
     pathway: "Foundation",
     duration: "8 Weeks",
     priceUsd: 399,
+    availability: "Pilot enrollment",
     shortDescription:
       "Learn ethical hacking fundamentals through authorized labs, guided exercises, and a beginner penetration-testing project.",
     fullDescription:
@@ -237,6 +241,7 @@ export const programs: Program[] = [
     pathway: "Career Accelerator",
     duration: "6 Months",
     priceUsd: 999,
+    availability: "In development",
     shortDescription:
       "Build authorized VAPT and penetration-testing skills with advanced labs, reporting practice, projects, and career preparation.",
     fullDescription:
@@ -293,6 +298,7 @@ export const programs: Program[] = [
     pathway: "Foundation",
     duration: "8 Weeks",
     priceUsd: 399,
+    availability: "In development",
     shortDescription:
       "Start with Python, data preparation, visualization, statistics, and introductory machine learning through a beginner project.",
     fullDescription:
@@ -343,6 +349,7 @@ export const programs: Program[] = [
     pathway: "Career Accelerator",
     duration: "6 Months",
     priceUsd: 999,
+    availability: "In development",
     shortDescription:
       "Build applied data science and AI skills with Python, SQL, machine learning, portfolio projects, and dedicated career support.",
     fullDescription:
@@ -395,7 +402,11 @@ export const programs: Program[] = [
 ];
 
 export const featuredPrograms = programs.filter(
-  (program) => program.pathway === "Foundation"
+  (program) => program.availability === "Pilot enrollment"
+);
+
+export const pilotProgram = programs.find(
+  (program) => program.availability === "Pilot enrollment"
 );
 
 export function getProgramBySlug(slug: string) {

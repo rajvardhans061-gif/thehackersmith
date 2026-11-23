@@ -32,11 +32,11 @@ export default function Resources() {
               Resources
             </p>
             <h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight text-[#10243A] sm:text-4xl">
-              Keep learning beyond the classroom.
+              Learning resources are in development.
             </h2>
             <p className="mt-4 max-w-2xl text-[16px] leading-7 text-[#526477]">
-              Continue building your technology knowledge with practical
-              articles, guided labs, and structured learning resources.
+              Articles, guided labs, and technology guides are planned. We will
+              publish them as they are ready for learners.
             </p>
           </div>
 
@@ -69,7 +69,7 @@ export default function Resources() {
 
         <div className="mt-9 flex flex-col gap-3 border-t border-[#E2E8F0] pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm text-[#526477]">
-            Learning continues through practice and curiosity.
+            Check back for published resources.
           </p>
           <span className="text-xs font-semibold tracking-[0.12em] text-[#137E88]">
             KEEP LEARNING · KEEP BUILDING
